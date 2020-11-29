@@ -1,0 +1,24 @@
+﻿C:\Users\hunho\source\repos\Shh0yaKHook\Shh0yaKHook\Shh0yaKHook.vcxproj(105,5): warning MSB4011: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\BuildCustomizations\masm.props"을(를) 다시 가져올 수 없습니다. "C:\Program Files (x86)\Windows Kits\10\build\WindowsDriver.Shared.props(330,3)"에서 이미 가져왔습니다. 이는 빌드 작성 오류일 가능성이 높으며 이 후속 가져오기는 무시됩니다. 
+C:\Users\hunho\source\repos\Shh0yaKHook\Shh0yaKHook\Shh0yaKHook.vcxproj(166,5): warning MSB4011: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\BuildCustomizations\masm.targets"을(를) 다시 가져올 수 없습니다. "C:\Program Files (x86)\Windows Kits\10\build\WindowsDriver.common.targets(1797,3)"에서 이미 가져왔습니다. 이는 빌드 작성 오류일 가능성이 높으며 이 후속 가져오기는 무시됩니다. 
+  Building 'Shh0yaKHook' with toolset 'WindowsKernelModeDriver10.0' and the 'Desktop' target platform.
+  Stamping x64\Release\Shh0yaKHook.inf
+  Stamping [Version] section with DriverVer=11/29/2020,19.33.48.235
+  Shh0yaKHook.vcxproj -> C:\Users\hunho\source\repos\Shh0yaKHook\x64\Release\Shh0yaKHook.sys
+C:\Users\hunho\source\repos\Shh0yaKHook\Shh0yaKHook\Shh0yaKHook.vcxproj(105,5): warning MSB4011: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\BuildCustomizations\masm.props"을(를) 다시 가져올 수 없습니다. "C:\Program Files (x86)\Windows Kits\10\build\WindowsDriver.Shared.props(330,3)"에서 이미 가져왔습니다. 이는 빌드 작성 오류일 가능성이 높으며 이 후속 가져오기는 무시됩니다. 
+C:\Users\hunho\source\repos\Shh0yaKHook\Shh0yaKHook\Shh0yaKHook.vcxproj(166,5): warning MSB4011: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\BuildCustomizations\masm.targets"을(를) 다시 가져올 수 없습니다. "C:\Program Files (x86)\Windows Kits\10\build\WindowsDriver.common.targets(1797,3)"에서 이미 가져왔습니다. 이는 빌드 작성 오류일 가능성이 높으며 이 후속 가져오기는 무시됩니다. 
+  .........................
+  Signability test complete.
+  
+  Errors:
+  None
+  
+  Warnings:
+  None
+  
+  Catalog generation complete.
+  C:\Users\hunho\source\repos\Shh0yaKHook\x64\Release\Shh0yaKHook\shh0yakhook.cat
+C:\Users\hunho\source\repos\Shh0yaKHook\Shh0yaKHook\Shh0yaKHook.vcxproj(105,5): warning MSB4011: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\BuildCustomizations\masm.props"을(를) 다시 가져올 수 없습니다. "C:\Program Files (x86)\Windows Kits\10\build\WindowsDriver.Shared.props(330,3)"에서 이미 가져왔습니다. 이는 빌드 작성 오류일 가능성이 높으며 이 후속 가져오기는 무시됩니다. 
+C:\Users\hunho\source\repos\Shh0yaKHook\Shh0yaKHook\Shh0yaKHook.vcxproj(166,5): warning MSB4011: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\BuildCustomizations\masm.targets"을(를) 다시 가져올 수 없습니다. "C:\Program Files (x86)\Windows Kits\10\build\WindowsDriver.common.targets(1797,3)"에서 이미 가져왔습니다. 이는 빌드 작성 오류일 가능성이 높으며 이 후속 가져오기는 무시됩니다. 
+  Done Adding Additional Store
+  Successfully signed: C:\Users\hunho\source\repos\Shh0yaKHook\x64\Release\Shh0yaKHook\shh0yakhook.cat
+  
