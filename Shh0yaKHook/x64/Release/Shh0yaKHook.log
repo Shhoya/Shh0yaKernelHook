@@ -1,11 +1,33 @@
-﻿C:\Users\hunho\source\repos\Shh0yaKHook\Shh0yaKHook\Shh0yaKHook.vcxproj(105,5): warning MSB4011: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\BuildCustomizations\masm.props"을(를) 다시 가져올 수 없습니다. "C:\Program Files (x86)\Windows Kits\10\build\WindowsDriver.Shared.props(330,3)"에서 이미 가져왔습니다. 이는 빌드 작성 오류일 가능성이 높으며 이 후속 가져오기는 무시됩니다. 
-C:\Users\hunho\source\repos\Shh0yaKHook\Shh0yaKHook\Shh0yaKHook.vcxproj(166,5): warning MSB4011: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\BuildCustomizations\masm.targets"을(를) 다시 가져올 수 없습니다. "C:\Program Files (x86)\Windows Kits\10\build\WindowsDriver.common.targets(1797,3)"에서 이미 가져왔습니다. 이는 빌드 작성 오류일 가능성이 높으며 이 후속 가져오기는 무시됩니다. 
+﻿D:\Shh0ya\Shh0yaKernelHook\Shh0yaKHook\Shh0yaKHook.vcxproj(105,5): warning MSB4011: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\BuildCustomizations\masm.props"을(를) 다시 가져올 수 없습니다. "C:\Program Files (x86)\Windows Kits\10\build\WindowsDriver.Shared.props(330,3)"에서 이미 가져왔습니다. 이는 빌드 작성 오류일 가능성이 높으며 이 후속 가져오기는 무시됩니다. 
+D:\Shh0ya\Shh0yaKernelHook\Shh0yaKHook\Shh0yaKHook.vcxproj(166,5): warning MSB4011: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\BuildCustomizations\masm.targets"을(를) 다시 가져올 수 없습니다. "C:\Program Files (x86)\Windows Kits\10\build\WindowsDriver.common.targets(1797,3)"에서 이미 가져왔습니다. 이는 빌드 작성 오류일 가능성이 높으며 이 후속 가져오기는 무시됩니다. 
   Building 'Shh0yaKHook' with toolset 'WindowsKernelModeDriver10.0' and the 'Desktop' target platform.
   Stamping x64\Release\Shh0yaKHook.inf
-  Stamping [Version] section with DriverVer=11/29/2020,19.33.48.235
-  Shh0yaKHook.vcxproj -> C:\Users\hunho\source\repos\Shh0yaKHook\x64\Release\Shh0yaKHook.sys
-C:\Users\hunho\source\repos\Shh0yaKHook\Shh0yaKHook\Shh0yaKHook.vcxproj(105,5): warning MSB4011: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\BuildCustomizations\masm.props"을(를) 다시 가져올 수 없습니다. "C:\Program Files (x86)\Windows Kits\10\build\WindowsDriver.Shared.props(330,3)"에서 이미 가져왔습니다. 이는 빌드 작성 오류일 가능성이 높으며 이 후속 가져오기는 무시됩니다. 
-C:\Users\hunho\source\repos\Shh0yaKHook\Shh0yaKHook\Shh0yaKHook.vcxproj(166,5): warning MSB4011: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\BuildCustomizations\masm.targets"을(를) 다시 가져올 수 없습니다. "C:\Program Files (x86)\Windows Kits\10\build\WindowsDriver.common.targets(1797,3)"에서 이미 가져왔습니다. 이는 빌드 작성 오류일 가능성이 높으며 이 후속 가져오기는 무시됩니다. 
+  Stamping [Version] section with DriverVer=11/29/2020,20.17.8.679
+  Hook.c
+D:\Shh0ya\Shh0yaKernelHook\Shh0yaKHook\Hook.h(49,24): warning C4214: 비표준 확장이 사용됨: 비트 필드 형식이 int가 아닙니다.
+D:\Shh0ya\Shh0yaKernelHook\Shh0yaKHook\Hook.h(50,25): warning C4214: 비표준 확장이 사용됨: 비트 필드 형식이 int가 아닙니다.
+D:\Shh0ya\Shh0yaKernelHook\Shh0yaKHook\Hook.h(51,27): warning C4214: 비표준 확장이 사용됨: 비트 필드 형식이 int가 아닙니다.
+D:\Shh0ya\Shh0yaKernelHook\Shh0yaKHook\Hook.h(52,23): warning C4214: 비표준 확장이 사용됨: 비트 필드 형식이 int가 아닙니다.
+D:\Shh0ya\Shh0yaKernelHook\Shh0yaKHook\Hook.h(53,22): warning C4214: 비표준 확장이 사용됨: 비트 필드 형식이 int가 아닙니다.
+D:\Shh0ya\Shh0yaKernelHook\Shh0yaKHook\Hook.h(54,23): warning C4214: 비표준 확장이 사용됨: 비트 필드 형식이 int가 아닙니다.
+D:\Shh0ya\Shh0yaKernelHook\Shh0yaKHook\Hook.h(55,29): warning C4214: 비표준 확장이 사용됨: 비트 필드 형식이 int가 아닙니다.
+D:\Shh0ya\Shh0yaKernelHook\Shh0yaKHook\Hook.h(56,23): warning C4214: 비표준 확장이 사용됨: 비트 필드 형식이 int가 아닙니다.
+D:\Shh0ya\Shh0yaKernelHook\Shh0yaKHook\Hook.h(57,30): warning C4214: 비표준 확장이 사용됨: 비트 필드 형식이 int가 아닙니다.
+D:\Shh0ya\Shh0yaKernelHook\Shh0yaKHook\Hook.h(58,24): warning C4214: 비표준 확장이 사용됨: 비트 필드 형식이 int가 아닙니다.
+D:\Shh0ya\Shh0yaKernelHook\Shh0yaKHook\Hook.h(59,3): warning C4201: 비표준 확장이 사용됨: 구조체/공용 구조체의 이름이 없습니다.
+D:\Shh0ya\Shh0yaKernelHook\Shh0yaKHook\Hook.c(73,61): warning C4047: '=': 'PVOID'의 간접 참조 수준이 'DWORD64'과(와) 다릅니다.
+D:\Shh0ya\Shh0yaKernelHook\Shh0yaKHook\Hook.c(115,90): warning C4047: '함수': 'ULONG'의 간접 참조 수준이 'char [5]'과(와) 다릅니다.
+D:\Shh0ya\Shh0yaKernelHook\Shh0yaKHook\Hook.c(115,84): warning C4024: 'ExAllocatePoolWithTag': 형식 및 실제 매개 변수 3의 형식이 서로 다릅니다.
+D:\Shh0ya\Shh0yaKernelHook\Shh0yaKHook\Hook.c(115,91): warning C4152: 비표준 확장입니다. 식에서 함수/데이터 포인터 변환이 있습니다.
+D:\Shh0ya\Shh0yaKernelHook\Shh0yaKHook\Hook.c(116,2): warning C4152: 비표준 확장입니다. 식에서 함수/데이터 포인터 변환이 있습니다.
+D:\Shh0ya\Shh0yaKernelHook\Shh0yaKHook\Hook.c(134,160): warning C4152: 비표준 확장입니다. 식에서 함수/데이터 포인터 변환이 있습니다.
+D:\Shh0ya\Shh0yaKernelHook\Shh0yaKHook\Hook.c(135,160): warning C4152: 비표준 확장입니다. 식에서 함수/데이터 포인터 변환이 있습니다.
+  Shh0yaKHook.vcxproj -> D:\Shh0ya\Shh0yaKernelHook\x64\Release\Shh0yaKHook.sys
+D:\Shh0ya\Shh0yaKernelHook\Shh0yaKHook\Shh0yaKHook.vcxproj(105,5): warning MSB4011: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\BuildCustomizations\masm.props"을(를) 다시 가져올 수 없습니다. "C:\Program Files (x86)\Windows Kits\10\build\WindowsDriver.Shared.props(330,3)"에서 이미 가져왔습니다. 이는 빌드 작성 오류일 가능성이 높으며 이 후속 가져오기는 무시됩니다. 
+D:\Shh0ya\Shh0yaKernelHook\Shh0yaKHook\Shh0yaKHook.vcxproj(166,5): warning MSB4011: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\BuildCustomizations\masm.targets"을(를) 다시 가져올 수 없습니다. "C:\Program Files (x86)\Windows Kits\10\build\WindowsDriver.common.targets(1797,3)"에서 이미 가져왔습니다. 이는 빌드 작성 오류일 가능성이 높으며 이 후속 가져오기는 무시됩니다. 
+  Done Adding Additional Store
+  Successfully signed: D:\Shh0ya\Shh0yaKernelHook\x64\Release\Shh0yaKHook.sys
+  
   .........................
   Signability test complete.
   
@@ -16,9 +38,9 @@ C:\Users\hunho\source\repos\Shh0yaKHook\Shh0yaKHook\Shh0yaKHook.vcxproj(166,5): 
   None
   
   Catalog generation complete.
-  C:\Users\hunho\source\repos\Shh0yaKHook\x64\Release\Shh0yaKHook\shh0yakhook.cat
-C:\Users\hunho\source\repos\Shh0yaKHook\Shh0yaKHook\Shh0yaKHook.vcxproj(105,5): warning MSB4011: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\BuildCustomizations\masm.props"을(를) 다시 가져올 수 없습니다. "C:\Program Files (x86)\Windows Kits\10\build\WindowsDriver.Shared.props(330,3)"에서 이미 가져왔습니다. 이는 빌드 작성 오류일 가능성이 높으며 이 후속 가져오기는 무시됩니다. 
-C:\Users\hunho\source\repos\Shh0yaKHook\Shh0yaKHook\Shh0yaKHook.vcxproj(166,5): warning MSB4011: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\BuildCustomizations\masm.targets"을(를) 다시 가져올 수 없습니다. "C:\Program Files (x86)\Windows Kits\10\build\WindowsDriver.common.targets(1797,3)"에서 이미 가져왔습니다. 이는 빌드 작성 오류일 가능성이 높으며 이 후속 가져오기는 무시됩니다. 
+  D:\Shh0ya\Shh0yaKernelHook\x64\Release\Shh0yaKHook\shh0yakhook.cat
+D:\Shh0ya\Shh0yaKernelHook\Shh0yaKHook\Shh0yaKHook.vcxproj(105,5): warning MSB4011: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\BuildCustomizations\masm.props"을(를) 다시 가져올 수 없습니다. "C:\Program Files (x86)\Windows Kits\10\build\WindowsDriver.Shared.props(330,3)"에서 이미 가져왔습니다. 이는 빌드 작성 오류일 가능성이 높으며 이 후속 가져오기는 무시됩니다. 
+D:\Shh0ya\Shh0yaKernelHook\Shh0yaKHook\Shh0yaKHook.vcxproj(166,5): warning MSB4011: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\BuildCustomizations\masm.targets"을(를) 다시 가져올 수 없습니다. "C:\Program Files (x86)\Windows Kits\10\build\WindowsDriver.common.targets(1797,3)"에서 이미 가져왔습니다. 이는 빌드 작성 오류일 가능성이 높으며 이 후속 가져오기는 무시됩니다. 
   Done Adding Additional Store
-  Successfully signed: C:\Users\hunho\source\repos\Shh0yaKHook\x64\Release\Shh0yaKHook\shh0yakhook.cat
+  Successfully signed: D:\Shh0ya\Shh0yaKernelHook\x64\Release\Shh0yaKHook\shh0yakhook.cat
   

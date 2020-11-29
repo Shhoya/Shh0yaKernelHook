@@ -95,7 +95,7 @@ BOOLEAN InitializeKHookEx(PSTR BytePattern, PVOID HookingFunction, ULONG Size, U
 }
 
 
-ExAllocatePoolWithTag_t ExAllocatePoolWithTagOrig; // need custom
+ExAllocatePoolWithTag_t ExAllocatePoolWithTagOrig = NULL; // need custom
 
 VOID SetupKHook()
 {
@@ -154,7 +154,7 @@ VOID EnableKHook()
 
 VOID DisableKHook()
 {
-	if (!HookData.TargetAddress)
+	if (!ExAllocatePoolWithTagOrig)
 	{
 		return;
 	}
