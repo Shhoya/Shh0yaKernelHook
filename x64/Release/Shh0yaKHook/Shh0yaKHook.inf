@@ -7,7 +7,7 @@ Signature="$WINDOWS NT$"
 Class=System
 ClassGuid={4d36e97d-e325-11ce-bfc1-08002be10318}
 Provider=%ManufacturerName%
-DriverVer = 11/29/2020,20.17.8.679
+DriverVer = 12/08/2020,22.31.48.160
 CatalogFile=Shh0yaKHook.cat
 
 [DestinationDirs]

@@ -66,9 +66,9 @@ Hooking Data Structure(TargetAddress, Hooking Function, Trampoline Bytes, etc...
 */
 typedef struct _HOOK_DATA {
 	PVOID		TargetAddress;
-	PVOID		 HookFunction;
+	PVOID		HookFunction;
 	ULONG		PatchSize;
-	PPDE		TargetPdeAddress;
+	PVOID		TargetPdeAddress;
 	PVOID		TargetPteAddress;
 	UCHAR		PatchByte[14];
 	UCHAR		TrampolineByte[255];

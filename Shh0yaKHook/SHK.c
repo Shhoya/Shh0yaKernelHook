@@ -147,9 +147,11 @@ NTSTATUS DriverDeviceControl(PDEVICE_OBJECT pDevice, PIRP pIrp)
 	case 0:
 	{
 
-		InitializeKHook(L"ExAllocatePoolWithTag", ExAllocatePoolWithTagHook, 15);	// need custom
-		//InitializeKHookEx("44 0F B7 3D A4 9F 34 00", ExAllocatePoolWithTagHook, 15, 0x24); // need custom
-		//EnableKHook();
+		//InitializeKHook(L"ExAllocatePoolWithTag", ExAllocatePoolWithTagHook, 15);	// need custom
+		if(InitializeKHookEx("44 0F B7 3D A4 8F 33 00", ExAllocatePoolWithTagHook, 15, 0x24)) // need custom
+		{
+			EnableKHook();
+		}
 		pIrp->IoStatus.Status = STATUS_SUCCESS;
 		break;
 	}

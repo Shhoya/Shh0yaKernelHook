@@ -45,12 +45,6 @@ BOOLEAN InitializeKHook(PCWCHAR TargetName, PVOID HookingFunction, ULONG Size)
 	{
 		HookData.TargetPdeAddress = InitializeBlock.MiGetPdeAddress(TargetAddress);
 		Log("%ws PDE Address : 0x%llX\n", TargetName, HookData.TargetPdeAddress);
-		if (HookData.TargetPdeAddress->WriteAccess != 1)
-		{
-			HookData.TargetPdeAddress->WriteAccess = 1;
-		}
-		// TODO
-		//HookData.TargetPteAddress = InitializeBlock.MiGetPteAddress(ExAllocatePoolWithTag);
 	}
 
 	SetupKHook(Size);
@@ -79,12 +73,6 @@ BOOLEAN InitializeKHookEx(PSTR BytePattern, PVOID HookingFunction, ULONG Size, U
 	{
 		HookData.TargetPdeAddress = InitializeBlock.MiGetPdeAddress(TargetAddress);
 		Log("Target PDE Address : 0x%llX\n", HookData.TargetPdeAddress);
-		if (HookData.TargetPdeAddress->WriteAccess != 1)
-		{
-			HookData.TargetPdeAddress->WriteAccess = 1;
-		}
-		// TODO
-		//HookData.TargetPteAddress = InitializeBlock.MiGetPteAddress(ExAllocatePoolWithTag);
 	}
 
 	SetupKHook(Size);
@@ -95,7 +83,7 @@ BOOLEAN InitializeKHookEx(PSTR BytePattern, PVOID HookingFunction, ULONG Size, U
 }
 
 
-ExAllocatePoolWithTag_t ExAllocatePoolWithTagOrig = NULL; // need custom
+ExAllocatePoolWithTag_t ExAllocatePoolWithTagOrig; // need custom
 
 VOID SetupKHook()
 {
@@ -114,7 +102,6 @@ VOID SetupKHook()
 	
 	ExAllocatePoolWithTagOrig = ExAllocatePoolWithTag(NonPagedPoolExecute, PAGE_SIZE, "SHH0");	// need custom
 	RtlCopyMemory(ExAllocatePoolWithTagOrig, &HookData.TrampolineByte, sizeof(HookData.TrampolineByte)); // need custom
-
 }
 
 BOOLEAN InitializeSystemInformation()
@@ -145,22 +132,57 @@ BOOLEAN InitializeSystemInformation()
 	return TRUE;
 }
 
+VOID HookPatch(PVOID TargetAddress, PUCHAR PatchBytes)
+{
+	PMDL pMdl = IoAllocateMdl(TargetAddress, 16, FALSE, FALSE, NULL);
+	if (pMdl == NULL)
+	{
+		ErrLog("MDL allocation failed\n");
+		return;
+	}
+	__try
+	{
+		MmProbeAndLockPages(pMdl, KernelMode, IoReadAccess);
+	}
+	__except (EXCEPTION_EXECUTE_HANDLER)
+	{
+		IoFreeMdl(pMdl);
+		ErrLog("Invalid V.A(MDL)\n");
+		return;
+	}
+
+	PULONG64 MappingData = MmMapLockedPagesSpecifyCache(pMdl, KernelMode, MmNonCached, NULL, FALSE, NormalPagePriority);
+	if (MappingData == NULL)
+	{
+		MmUnlockPages(pMdl);
+		IoFreeMdl(pMdl);
+		ErrLog("MappingData allocation failed\n");
+		return;
+	}
+
+	if (!NT_SUCCESS(MmProtectMdlSystemAddress(pMdl, PAGE_READWRITE)))
+	{
+		MmUnmapLockedPages(MappingData, pMdl);
+		MmUnlockPages(pMdl);
+		IoFreeMdl(pMdl);
+		ErrLog("Protection change failed\n");
+		return;
+	}
+
+	RtlCopyMemory(MappingData, PatchBytes, HOOK_SIZE);
+	MmUnmapLockedPages(MappingData, pMdl);
+	MmUnlockPages(pMdl);
+	IoFreeMdl(pMdl);
+}
+
 VOID EnableKHook()
 {
-	RtlCopyMemory(HookData.TargetAddress, HookData.PatchByte, HOOK_SIZE);
-	Log("Hooking has been enabled\n");
-	return;
+	HookPatch(HookData.TargetAddress, &HookData.PatchByte);
 }
 
 VOID DisableKHook()
 {
-	if (!ExAllocatePoolWithTagOrig)
-	{
-		return;
-	}
-	RtlCopyMemory(HookData.TargetAddress, HookData.OriginalByte, HOOK_SIZE);
-	Log("Hooking has been disabled\n");
-
+	HookPatch(HookData.TargetAddress, &HookData.OriginalByte);
 }
 
 

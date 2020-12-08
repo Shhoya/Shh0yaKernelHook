@@ -1,16 +1,65 @@
 # Shh0yaKernelHook
 Shh0ya Kernel Hook Driver
 
-19041 이상의 경우 PDE에 Write 가 없습니다.
-그래서 MiGetPdeAddress를 이용하여 후킹하고자 하는 함수의 PDE를 찾고, 이를 수정합니다.
-DebugMode+DSE 에서는 동작하지만 일반 모드에서는 후킹이 되지 않습니다.
-연구 중입니다.
-일반 모드에서도 PDE의 권한은 잘 바뀌는데 왜 안될까...
+## Hook Method
 
-현재 진행 된 연구 사항으로는,
+1. `InitializeKHook`
 
-DebugMode + DSE 모드에서도 inline hooking 코드를 실행 시, `page_fault_in_nonpaged_area` 가 발생한다.
-이 때, PDE의 Write 비트 플래그를 Set 해주면 후킹이 가능하다.
-하지만 일반 모드에서는 같은 작업을 해도 `page_fault_in_nonpaged_area` 가 발생한다.
+   ```c++
+   BOOLEAN InitializeKHook(
+       PCWCHAR TargetName,
+       PVOID   HookingFunction,
+       ULONG   Size
+   )
+   /*
+   TargetName : Routine Name. Ex) L"ExAllocatePoolWithTag"
+   HookingFunction : Hook Function. Ex) ExAllocatePoolWithTag_Hook
+   Size : Original instruction size
+   
+   48 89 5C 24 08                          mov     [rsp+arg_0], rbx
+   48 89 6C 24 10                          mov     [rsp+arg_8], rbp
+   48 89 74 24 18                          mov     [rsp+arg_10], rsi	//After 14 bytes of hook patch, the command is executed up to here and it is executed normally, So I need 15 bytes of the original data.
+   
+   57                                      push    rdi	// After Hooking function call
+   41 56                                   push    r14
+   41 57                                   push    r15
+   48 83 EC 30                             sub     rsp, 30h
+   */
+   ```
 
-왜죠?
+2. `InitializeKHookEx`
+
+   ```c++
+   BOOLEAN InitializeKHookEx(
+       PSTR BytePattern, 
+       PVOID HookingFunction, 
+       ULONG Size, 
+       ULONG RelSize
+   )
+   /*
+   BytePattern : Target function byte identification pattern
+   
+   1409B1030 48 89 5C 24 08                          mov     [rsp+arg_0], rbx
+   1409B1035 48 89 6C 24 10                          mov     [rsp+arg_8], rbp
+   1409B103A 48 89 74 24 18                          mov     [rsp+arg_10], rsi
+   1409B103F 57                                      push    rdi
+   1409B1040 41 56                                   push    r14
+   1409B1042 41 57                                   push    r15
+   1409B1044 48 83 EC 30                             sub     rsp, 30h
+   1409B1048 65 48 8B 04 25 20 00 00+                mov     rax, gs:20h
+   1409B1051 45 8B F0                                mov     r14d, r8d
+   
+   1409B1054 44 0F B7 3D A4 9F 34 00                 movzx   r15d, cs:KeNumberNodes <= Byte pattern that exists only in ExallocatePoolWithTag
+   
+   HookingFunction : Hook Function
+   Size : Same as InitializeKHook
+   RelSize : Size from pattern to first of target function
+   
+   Pattern : 1409B1054 44 0F B7 3D A4 9F 34 00
+   RelSize : 1409B1054 - 1409B1030 = 0x24
+   
+   */
+   ```
+
+   
+
