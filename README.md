@@ -3,6 +3,10 @@ Shh0ya Kernel Hook Driver
 
 ## Hook Method
 
+메모리 설명자 목록(Memory Descriptor List), MDL을 이용한 Kernel inline hooking 드라이버입니다.
+당연히 PG(PatchGuard, KPP) 우회가 필요합니다.
+서명의 경우 [Code Integrity](https://shhoya.github.io/antikernel_codeintegrity.html) 를 읽어보시면 간단한 코드로 우회할 수 있습니다.
+
 1. `InitializeKHook`
 
    ```c++
